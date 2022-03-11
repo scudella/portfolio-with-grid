@@ -522,6 +522,49 @@ Projects
   opacity: 1;
   transform: scale(0.8);
 }
+@media screen and (min-width: 676px) {
+  .projects-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .projects-center {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1170px) {
+  .projects-center {
+    grid-template-rows: 200px 200px;
+    gap: 1rem;
+    grid-template-areas:
+      'a b b'
+      'a c d';
+  }
+  .project-1 {
+    grid-area: a;
+  }
+  .project-2 {
+    grid-area: b;
+  }
+  .project-3 {
+    grid-area: c;
+  }
+  .project-4 {
+    grid-area: d;
+  }
+  /* after setting the grid-area the layout did not
+  work right away due to previous image setup above
+  which is height: 15rem */
+  .project-img {
+    height: 100%;
+  }
+  /* The above fix, does not fix it all. Also, the classes project-x are in the links (html) while the image is now 100%, the article also needs to be 100% */
+  .project {
+    height: 100%;
+  }
+}
 /*
 =============== 
 Connect
